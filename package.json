@@ -1,0 +1,29 @@
+{
+  "name": "bnarvaez.dev",
+  "author": "Brayan Narváez <princk093@gmail.com> (https://bnarvaez.dev/)",
+  "private": true,
+  "version": "1.0.0",
+  "license": "LGPL-3.0-or-later",
+  "scripts": {
+    "serve": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest --dom --run",
+    "coverage": "vitest run --coverage --dom"
+  },
+  "dependencies": {
+    "sass": "^1.52.3",
+    "vue": "^3.2.25",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "c8": "^7.11.3",
+    "happy-dom": "^5.2.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vitest": "^0.14.2",
+    "vue-tsc": "^0.34.7"
+  }
+}

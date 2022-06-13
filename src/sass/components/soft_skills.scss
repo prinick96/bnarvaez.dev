@@ -1,0 +1,127 @@
+.soft_skills {
+    @include flex_column;
+    margin-bottom: 60px;
+
+    // Móvil
+    @media only screen and (max-width: 575px) {
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+    
+
+    .soft_skills_title {
+        @include flex_column;
+
+        position: relative;
+        background: $black;
+        border-radius: 30px;
+        padding: 16px 24px;
+        color: #FFF;
+        text-transform: uppercase;
+        font-weight: bold;
+        width:  155px;
+        margin-bottom: 70px;
+
+        // Tablas, Desktop
+        @media only screen and (min-width: 576px) {
+            &::before {
+                content: "";
+                width: 546px;
+                height: 1px;
+                border-bottom: 2px dashed #000;
+                position: absolute;
+                left: 50%;
+                bottom: -24px;
+                transform: translate(-50%)
+            }
+    
+            &::after {
+                content: "";
+                bottom: -23px;
+                left: 50%;
+                transform: translate(-50%);
+                width: 1px;
+                height: 24px;
+                position: absolute;
+                border-left: 2px dashed #000;
+            }
+        }
+
+        // Móvil
+        @media only screen and (max-width: 575px) {
+            margin-bottom: 10px;
+
+            &::before {
+                content: "";
+                width: 1px;
+                height: 225px;
+                border-left: 2px dashed #000;
+                position: absolute;
+                left: 25px;
+                bottom: -221px;
+            }
+        }
+        
+    }
+
+    .soft_skills_lines {
+        @include flex_column;
+
+        .words {
+            margin-top: 8px;
+            width: 110%;
+
+            // Tablas, Desktop
+            @media only screen and (min-width: 576px) {
+                @include flex_row(space-between);
+            }
+
+            span {
+                position: relative;
+                color: #000;
+                font-weight: bold;
+                font-size: 14px;
+                width: 121px;
+                text-align: center;
+
+                // Tablas, Desktop
+                @media only screen and (min-width: 576px) {
+                    &::before {
+                        content: "";
+                        top: -54px;
+                        left: 50%;
+                        transform: translate(-50%);
+                        width: 1px;
+                        height: 46px;
+                        position: absolute;
+                        border-left: 2px dashed #000;
+                    }
+                }
+
+            }
+
+            // Móvil
+            @media only screen and (max-width: 575px) {
+                @include flex_column(flex-start);
+                margin-left: 80px;
+
+                span {
+                    text-align: left;
+                    margin-bottom: 30px;
+
+                    &::before {
+                        content: "";
+                        left: -54px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 46px;
+                        height: 1px;
+                        position: absolute;
+                        border-bottom: 2px dashed #000;
+                    }
+                }
+            }
+        }
+       
+    }
+}

@@ -1,0 +1,17 @@
+.stat {
+    width: 250px;
+
+    .quantity {
+        font-weight: bold;
+        font-size: 40px;
+        color: $black;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-weight: 600;
+        font-size: 1rem;
+        color: $black_6;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+}

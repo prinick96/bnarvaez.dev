@@ -1,0 +1,172 @@
+@mixin left_part($circle : -56px) {
+    &::after {
+        right: unset;
+        left: -3px;
+        box-shadow: -2px -3px 3px rgb(0 0 0 / 10%)
+    }
+    &::before {
+        right: unset;
+        left: $circle;
+    }
+}
+
+.time_line {
+    width: 100%;
+    @include flex_column;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        border-left: 2px solid $black_1;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }   
+
+    .time_line_section {
+        width: 100%;
+        max-width: 1145px;
+
+        .time_line__item {
+            width: 100%;
+            max-width: 530px;
+            // Hasta tablets
+            @media only screen and (max-width: 1199px) {
+                max-width: 100%; 
+            }
+            height: auto;
+            background: #FFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                transform: rotate(-45deg);
+                background: #fff;
+                position: absolute;
+                box-shadow: 2px 3px 3px rgb(0 0 0 / 10%);
+                top: 51px;
+                right: -3px;
+            }
+
+            &::before {
+                content: "";
+                background-color: $gray_dark_2;
+                width: 18px;
+                height: 18px;
+                border: 4px solid $white;
+                border-radius: 50%;
+                position: absolute;
+                top: 44px;
+                right: -56px;
+            }
+
+            header {
+                position: relative;
+                user-select: none;
+
+                .arrow {
+                    top: -18px;
+                    right: -32px;
+                    transform: scale(0.2);
+                }
+            }
+
+            h5 {
+                margin-bottom: 16px;
+                font-size: 24px;
+                font-size: bold;
+            }
+
+            small {
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: $black_6;
+            }
+
+            p {
+                margin-top: 24px;
+                color: $gray_dark;   
+                text-align: justify;
+                line-height: 24px;
+            }
+
+            footer {
+                @include flex_row(space-between);
+                margin-top: 35px;
+
+                ul {
+                    @include flex_row(flex-start);
+                    flex-wrap: wrap;
+                    gap: 16px;
+
+                    img {
+                        height: 26px;
+                        width: auto;
+                    }
+                }  
+                
+                a {
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid $gray_dark_2;
+                    border-radius: 8px;
+                    @include flex_column;
+                }
+                
+            }
+        }
+
+        @include flex_row(flex-start);
+
+        &:nth-child(2n) {
+            justify-content: flex-end;
+
+            .time_line__item {
+                @include left_part
+            }
+        }
+                
+    }
+
+    // Hasta tablas
+    @media only screen and (max-width: 1199px) {
+        padding-right: 10px;
+        
+        &::before {
+            left: 15px;
+        }   
+
+        .time_line_section {
+
+            .time_line__item {
+                margin-left: 40px;
+                margin-bottom: 25px;   
+
+                @include left_part(-37px)
+            }
+
+            &:last-child {
+                margin-bottom: 0px; 
+            }
+
+            &:nth-child(2n) {
+                justify-content: flex-start;
+
+                .time_line__item {
+                    @include left_part(-37px)
+                }
+            }
+
+           
+        }
+        
+    }
+}

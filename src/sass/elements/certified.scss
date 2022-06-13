@@ -1,0 +1,75 @@
+.certified {
+    width: 100%;
+    max-width: 945px;
+    height: auto;
+    min-height: 147px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 16px;
+    @include flex_row(flex-start);
+
+    figure {
+        margin-right: 24px;
+    }
+
+    .certified_content {
+        width: 100%;
+        @include flex_row(space-between);
+
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: $black;
+            margin-right: 20px;
+        }
+
+        .certifier {
+            color: $black_6;
+        }
+
+        // Móvil
+        @media only screen and (max-width: 575px) {
+            @include flex_column;
+
+            .certified_data {
+                @include flex_column;
+
+                .title {
+                    text-align: center;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    
+    .certified_time {
+        @include flex_column;
+
+        span {
+            color: $black_4;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        a {
+            background-color: white;
+            border: 1px solid $blue;
+            color: $blue;
+            border-radius: 4px;
+            @include flex_row;
+            padding: 10px 20px;
+            width: 155px;
+
+            &:hover {
+                background-color: $blue;
+                color: white;
+            }
+        }
+        
+    }
+}

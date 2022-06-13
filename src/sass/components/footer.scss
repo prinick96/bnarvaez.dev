@@ -1,0 +1,22 @@
+.footer {
+    padding: 50px;
+    width: 100%;
+    @include flex_row(space-between);
+
+    a {
+        color: $black;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    // Móvil
+    @media only screen and (max-width: 575px) {
+        @include flex_column(center);
+
+        a {
+            margin-top: 20px;
+        }
+    }
+}

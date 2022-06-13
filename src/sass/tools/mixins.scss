@@ -1,0 +1,23 @@
+@mixin flex_row($justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@mixin flex_column($justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flex_column_reverse($justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}

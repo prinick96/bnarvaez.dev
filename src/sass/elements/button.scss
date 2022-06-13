@@ -1,0 +1,19 @@
+.button {
+    width: auto;
+    max-width: 356px;
+    height: 64px;
+    background-color: $blue;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 100px;
+
+    @include flex_column;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}

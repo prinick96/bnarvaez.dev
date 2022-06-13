@@ -1,0 +1,12 @@
+.v-enter-active {
+  transition: all 0.1s ease-in;
+}
+
+.v-enter-from {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.v-leave-to {
+  opacity: 0;
+}

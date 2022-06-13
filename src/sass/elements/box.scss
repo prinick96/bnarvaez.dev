@@ -1,0 +1,25 @@
+.box {
+    span.title {
+        font-weight: bold;
+        text-transform: uppercase;  
+        color: $black;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 28px;
+        text-align: justify;
+    }
+
+    figure {
+        margin-bottom: 16px;
+    }
+
+    span.subtitle {
+        font-size: 14px;
+        color: $black;
+        font-weight: 600;
+    }
+}

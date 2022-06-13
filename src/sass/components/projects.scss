@@ -1,0 +1,44 @@
+.projects {
+    @include flex_column;
+
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: $black;
+    }
+
+    p {
+        max-width: 630px;
+        width: 100%;
+        text-align: center;
+        line-height: 28px;
+    }
+
+    // Móvil
+    @media only screen and (max-width: 575px) {
+        margin-top: 0;
+        
+        h1 {
+            text-align: center;
+        }
+    }
+
+    // iPad vertical
+    @media only screen and (min-width: 768px) and (max-width: 991px) { 
+        margin-top: 70px;
+    }
+    
+    .time_line {
+        margin-top: 88px;
+    }
+
+    .load_more {
+        margin-top: 50px;
+    }
+
+    padding-bottom: 80px;
+}
+.projects-border {
+    border-bottom: 1px solid $black_1;
+    margin-bottom: 80px;
+}

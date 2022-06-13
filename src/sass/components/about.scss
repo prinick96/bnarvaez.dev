@@ -1,0 +1,193 @@
+.about {
+    position: relative;
+    @include flex_column;
+
+    .about__presentation {
+        margin-bottom: 40px;
+        text-align: center;
+
+        h4 {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 64px;
+            color: $black;
+        }
+
+        // Móvil
+        @media only screen and (max-width: 575px) {
+            h1 {
+                font-size: 55px;
+            }
+        }
+    }
+
+    .about__profile {
+        position: relative;
+        width: 100%;
+        max-width: 1150px;
+
+        // Tablas, Desktop
+        @media only screen and (min-width: 576px) {
+            height: 659.23px;
+            @include flex_row(space-between);
+        }
+        
+        .about__education, .about__stats {
+            max-width: 310px;
+        }
+
+        .about__photo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            figure {
+                margin-bottom: 23.77px;
+
+                video {
+                    border-radius: 30px;
+                }
+            }
+
+            small {
+                color: $black_8;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        }
+
+        .about__stats {
+            margin-left: 60px;
+            ul {
+                li {
+                    margin-bottom: 48px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .about__education {
+            .box {
+                margin-bottom: 48px;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            margin-bottom: 60px;
+        }
+
+        // Móvil
+        @media only screen and (max-width: 575px) {
+            height: 100%;
+            padding-top: 720px;
+            @include flex_column_reverse(flex-start);
+
+            .about__stats {
+                margin-left: 0;
+                margin-bottom: 50px;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        
+        // iPad vertical
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .about__stats {
+                margin-left: 0px;
+            
+                .stat {
+                    max-width: 170px;
+                }
+            }
+            .about__education {
+                max-width: 140px;
+                
+                .education {
+                    position: absolute;
+                    bottom: -118px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-align: center;
+
+                    .title {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        // iPad horizontal
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .about__stats {
+                margin-left: 70px;
+            }
+            .about__education {
+                max-width: 270px;
+            }
+        }
+
+        
+    }
+
+    .lets-talk {
+        position: absolute;
+        top: 107px;
+        right: 117px;
+
+        @media only screen and (max-width: 1300px) {
+            display: none;
+        }
+
+        a {
+            width: 140px;
+            height: 140px;
+            background-color: $blue;
+            border-radius: 50%;
+            @include flex_column;
+            transition: all 0.2s ease-in-out;
+
+            span {
+                margin-top: 10px;
+                color: $white;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+            }
+        }
+
+        .border {
+            width: 184px;
+            height: 184px;
+            background-color: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: -22px;
+            right: -21px;
+            border-radius: 50%;
+            z-index: -1;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+            a {
+                transform: scale(1.1);
+            }  
+            .border {
+                transform: scale(0.85);
+            }
+        }
+    }
+}
