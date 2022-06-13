@@ -1,5 +1,9 @@
 # bnarvaez-dev
 
+Personal webpage written in Vue 3, Sass and package with Vite.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/67937758-ab18-44f8-9d8a-968afed67f0b/deploy-status)](https://app.netlify.com/sites/prinick/deploys)
+
 ## ✅ Install and Run
 
 First clone the repo
