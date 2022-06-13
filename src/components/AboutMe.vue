@@ -45,9 +45,7 @@
                 </div>
                 <div class="about__photo">
                     <figure>
-                        <video id="me_video" width="360" height="632" poster="/video/me-cover.webp" tabindex="-1" muted loop autoplay>
-                            <source type="video/mp4" src="/video/me_video_loop.mp4">{{ lang.sorry }}
-                        </video>
+                        <video id="me_video" width="360" height="632" muted="" poster="/video/me-cover.webp" type="video/mp4" src="/video/me_loop.mp4" tabindex="-1" playsinline="" loop></video>
                     </figure>
                     <small v-html="love_code"></small>
                 </div>
@@ -128,11 +126,20 @@ export default defineComponent({
             useWriter(love_code, lang.value.love_coding, true)
         }
 
+        function safariLoadVideo() {
+            const video = document.getElementById('me_video') as HTMLVideoElement || null
+
+            if (video != null) {
+                video.play()
+            }
+        }
+
         onMounted(() => {
             useIncreaser(years, now.getFullYear() - from)
             useIncreaser(clients_satisfied, 100, 5)
             useIncreaser(projects_finished, 30, 20)
             textAnimations()
+            safariLoadVideo()
         })
 
         watch(lang, () => {
