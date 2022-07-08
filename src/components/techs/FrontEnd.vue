@@ -16,6 +16,14 @@
 
 	<div class="square">
 	  	<figure>
+			<img src="/images/tech/svelte.png" />
+	  	</figure>
+	  	<small>Svelte</small>
+	</div>
+
+
+	<div class="square">
+	  	<figure>
 			<img src="/images/tech/js.png" />
 	  	</figure>
 	  	<small>Javascript</small>
@@ -77,7 +85,5 @@
 	  	</figure>
 	  	<small>Pug</small>
 	</div>
-	
-	 <div class="square empty"></div>
   </div>
 </template>

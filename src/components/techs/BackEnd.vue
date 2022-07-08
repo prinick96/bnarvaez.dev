@@ -14,15 +14,15 @@
     </div>
 	<div class="square">
 		<figure>
-			<img src="/images/tech/python.png" />
-		</figure>
-		<small>Python</small>
-    </div>
-	<div class="square">
-		<figure>
 			<img src="/images/tech/node.png" />
 		</figure>
 		<small>Node JS</small>
+    </div>
+	<div class="square">
+		<figure>
+			<img src="/images/tech/python.png" />
+		</figure>
+		<small>Python</small>
     </div>
 	<div class="square">
 		<figure>
