@@ -38,15 +38,15 @@
     </div>
 	<div class="square">
 		<figure>
-			<img src="/images/tech/django.png" />
-		</figure>
-		<small>Django</small>
-    </div>
-	<div class="square">
-		<figure>
 			<img src="/images/tech/next.png" />
 		</figure>
 		<small>Next JS</small>
+    </div>
+	<div class="square">
+		<figure>
+			<img src="/images/tech/express.png" />
+		</figure>
+		<small>Express JS</small>
     </div>
   </div>
 </template>
