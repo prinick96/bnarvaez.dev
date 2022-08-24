@@ -2,9 +2,18 @@
     <section class="container">
         <div class="experience">
             <h3>{{ lang.my_exp }}</h3>
-            <h1>{{ lang.freelancer }}</h1>
-            <small>📆 2015 - {{ lang.now }}</small>
-            <p>{{ lang.all_my_exp }}</p>
+
+            <div class="an_exp">
+                <h1>{{ lang.bemobile }}<span class="bemobile-point">.</span></h1>
+                <small>📆 2022 - {{ lang.now }}</small>
+                <p>{{ lang.bemobile_exp }}</p>
+            </div>
+
+            <div class="an_exp">
+                <h1>{{ lang.freelancer }}</h1>
+                <small>📆 2015 - 2022</small>
+                <p>{{ lang.freelancer_exp }}</p>
+            </div>
         </div>
     </section>
 </template>

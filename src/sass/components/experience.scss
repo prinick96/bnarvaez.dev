@@ -2,6 +2,15 @@
     margin-top: 90px;
     @include flex_column;
 
+    > div {
+        @include flex_column;
+        margin-bottom: 40px;  
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
     h3 {
         text-transform: uppercase;
         font-size: 14px;
@@ -25,6 +34,10 @@
         line-height: 28px;
     }
 
+    .bemobile-point {
+        color: $bemobile_pink;
+    }
+
     // Móvil
     @media only screen and (max-width: 575px) {
         margin-top: 0;
@@ -36,7 +49,7 @@
 
     // iPad vertical
     @media only screen and (min-width: 768px) and (max-width: 991px) { 
-        margin-top: 170px;
+        margin-top: 320px;
     }
 
     margin-bottom: 60px;
