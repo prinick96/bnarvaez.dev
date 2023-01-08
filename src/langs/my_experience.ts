@@ -12,7 +12,7 @@ const my_experience : Langs = {
         mantenimiento ⚒️ y asesoría ⚖️.`,
 
         'bemobile' : 'Bemobile',
-        'bemobile_exp' : 'Senior Fullstack Developer en el equipo de desarrollo de la empresa.',
+        'bemobile_exp' : 'Lead Developer del equipo de desarrollo web.',
 
     },
     'en' : {
@@ -26,7 +26,7 @@ const my_experience : Langs = {
         maintaining ⚒️ and advisory ⚖️.`,
 
         'bemobile' : 'Bemobile',
-        'bemobile_exp' : 'Senior Fullstack Developer in the development team of the company.',
+        'bemobile_exp' : 'Lead Developer of web development team.',
     }
 } 
 export default my_experience
