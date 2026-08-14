@@ -44,9 +44,7 @@
                     </ul>
                 </div>
                 <div class="about__photo">
-                    <figure>
-                        <video id="me_video" width="360" height="632" poster="/video/me_cover.webp" type="video/mp4" src="/video/me_loop.mp4" tabindex="-1" playsinline muted loop></video>
-                    </figure>
+                    <figure class="about__photo-image" role="img" aria-label="Brayan Narváez en Japón"></figure>
                     <small v-html="love_code"></small>
                 </div>
                 <div class="about__education">
@@ -126,20 +124,11 @@ export default defineComponent({
             useWriter(love_code, lang.value.love_coding, true)
         }
 
-        function safariLoadVideo() {
-            const video = document.getElementById('me_video') as HTMLVideoElement || null
-
-            if (video != null) {
-                video.play()
-            }
-        }
-
         onMounted(() => {
             useIncreaser(years, now.getFullYear() - from)
             useIncreaser(clients_satisfied, 100, 5)
             useIncreaser(projects_finished, 30, 20)
             textAnimations()
-            safariLoadVideo()
         })
 
         watch(lang, () => {

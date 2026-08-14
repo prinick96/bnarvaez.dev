@@ -12,7 +12,7 @@ const my_experience : Langs = {
         mantenimiento ⚒️ y asesoría ⚖️.`,
 
         'bemobile' : 'Bemobile',
-        'bemobile_exp' : 'Lead Developer del equipo de desarrollo web.',
+        'bemobile_exp' : 'Tech Lead del equipo de desarrollo web.',
 
     },
     'en' : {
@@ -26,7 +26,7 @@ const my_experience : Langs = {
         maintaining ⚒️ and advisory ⚖️.`,
 
         'bemobile' : 'Bemobile',
-        'bemobile_exp' : 'Lead Developer of web development team.',
+        'bemobile_exp' : 'Tech Lead of the web development team.',
     }
 } 
 export default my_experience

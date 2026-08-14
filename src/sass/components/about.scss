@@ -34,8 +34,9 @@
             height: 659.23px;
             @include flex_row(space-between);
         }
-        
-        .about__education, .about__stats {
+
+        .about__education,
+        .about__stats {
             max-width: 310px;
         }
 
@@ -47,11 +48,16 @@
             text-align: center;
 
             figure {
+                --photo-zoom: 148%;
+                --photo-position: 29% 45%;
+                width: 360px;
+                height: 632px;
                 margin-bottom: 23.77px;
-
-                video {
-                    border-radius: 30px;
-                }
+                border-radius: 30px;
+                background-image: url('/images/me_japan.jpg');
+                background-position: var(--photo-position);
+                background-repeat: no-repeat;
+                background-size: var(--photo-zoom) auto;
             }
 
             small {
@@ -63,6 +69,7 @@
 
         .about__stats {
             margin-left: 60px;
+
             ul {
                 li {
                     margin-bottom: 48px;
@@ -102,19 +109,20 @@
                 }
             }
         }
-        
+
         // iPad vertical
         @media only screen and (min-width: 768px) and (max-width: 991px) {
             .about__stats {
                 margin-left: 0px;
-            
+
                 .stat {
                     max-width: 170px;
                 }
             }
+
             .about__education {
                 max-width: 140px;
-                
+
                 .education {
                     position: absolute;
                     bottom: -118px;
@@ -134,12 +142,13 @@
             .about__stats {
                 margin-left: 70px;
             }
+
             .about__education {
                 max-width: 270px;
             }
         }
 
-        
+
     }
 
     .lets-talk {
@@ -184,7 +193,8 @@
         &:hover {
             a {
                 transform: scale(1.1);
-            }  
+            }
+
             .border {
                 transform: scale(0.85);
             }
