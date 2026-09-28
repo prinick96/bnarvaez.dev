@@ -1,0 +1,2 @@
+export const INITIAL_CERTIFICATES = 5
+export const CERTIFICATES_PER_PAGE = 4

@@ -1,19 +1,10 @@
-import mockStore from '../store_mock'
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import LandingView from '../../views/LandingView.vue'
+import { describe, expect, it } from 'vitest'
+import { mountLocalized } from '@/tests/helpers/mountLocalized'
+import LandingView from '@/ui/pages/Home/index.vue'
 
-describe('components/LandingView.vue', () => {
-	const wrapper = mount(LandingView, {
-		global: {
-			plugins: [mockStore],
-		}
-	})
-
-	it('It should render', async () => {
-        const div = wrapper.get('main')
-        const attr = div.attributes()
-		expect(attr.class).to.equal("LandingView_Layout")
-    })
-
+describe('LandingView', () => {
+  it('renders the portfolio content', () => {
+    const { wrapper } = mountLocalized(LandingView)
+    expect(wrapper.get('main').findAll('section')).toHaveLength(6)
+  })
 })

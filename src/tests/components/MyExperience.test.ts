@@ -1,19 +1,10 @@
-import mockStore from '../store_mock'
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import MyExperience from '../../components/MyExperience.vue'
-import my_experience from '../../langs/my_experience'
+import { describe, expect, it } from 'vitest'
+import { mountLocalized } from '@/tests/helpers/mountLocalized'
+import MyExperience from '@/ui/components/MyExperience/index.vue'
 
-describe('components/MyExperience.vue', () => {
-	const wrapper = mount(MyExperience, {
-		global: {
-			plugins: [mockStore],
-		}
-	})
-
-	it('It should render', async () => {
-        const div = wrapper.get('h3')
-		expect(div.text()).to.equal(my_experience['es'].my_exp)
-    })
-
+describe('MyExperience', () => {
+  it('renders the portfolio content', () => {
+    const { wrapper } = mountLocalized(MyExperience)
+    expect(wrapper.text()).toContain('2015 - 2022')
+  })
 })

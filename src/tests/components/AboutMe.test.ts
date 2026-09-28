@@ -1,19 +1,10 @@
-import mockStore from '../store_mock'
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import about_me from '../../langs/about_me'
-import AboutMe from '../../components/AboutMe.vue'
+import { describe, expect, it } from 'vitest'
+import { mountLocalized } from '@/tests/helpers/mountLocalized'
+import AboutMe from '@/ui/components/AboutMe/index.vue'
 
-describe('components/AboutMe.vue', () => {
-	const wrapper = mount(AboutMe, {
-		global: {
-			plugins: [mockStore],
-		}
-	})
-
-	it('It should render', async () => {
-        const div = wrapper.get('h1.js-web-developer')
-		expect(div.text()).to.equal(about_me.es.develop)
-    })
-
+describe('AboutMe', () => {
+  it('renders the portfolio content', () => {
+    const { wrapper } = mountLocalized(AboutMe)
+    expect(wrapper.get('.js-web-developer').text()).toBe('AI Engineer & Software Architect')
+  })
 })

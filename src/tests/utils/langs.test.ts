@@ -1,22 +1,12 @@
-import { describe, it, expect } from 'vitest'
-import { useLang } from "../../utils/langs"
-import { Langs } from '../../types/langs'
+import { describe, expect, it } from 'vitest'
+import { createI18n } from '@/ui/locations/createI18n'
 
-describe('utils/langs.ts', () => {
-    const mockLang : Langs = {
-        'es' : {
-            'test' : 'test en español'
-        },
-        'en' : {
-            'test' : 'test in english'
-        }
-    }
-
-	it('it should do change depend of the lang', async () => {
-        let result = useLang(mockLang, 'es')
-        expect(result.test).to.equal(mockLang.es.test)
-
-        result = useLang(mockLang, 'en')
-        expect(result.test).to.equal(mockLang.en.test)
-	})
+describe('i18n', () => {
+  it('keeps locales isolated between application instances', () => {
+    const first = createI18n('es')
+    const second = createI18n('es')
+    first.changeLocale('en')
+    expect(first.messages.value.professional_skills.ai).toBe('Applied AI')
+    expect(second.messages.value.professional_skills.ai).toBe('IA aplicada')
+  })
 })

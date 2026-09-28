@@ -1,9 +1,5 @@
-#docker-compose up
-version: "3.9"  
-
 services:
   bnarvaez-dev:
-    image: bnarvaez-dev
-    container_name: "bnarvaez-dev-container"
+    build: .
     ports:
-      - "8080:8080"
+      - '8080:80'

@@ -2,30 +2,27 @@ name: CI
 
 on:
   push:
-    branches: [ production ]
+    branches: [production]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  ci-workflow:
-
+  verify:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: '14'
-
-      - run: npm ci # install dependencies
-      #- run: npm run build --if-present # build the project
-      - run: npm test # run the tests
-
-      # deploy site to Netlify using secrets created on repository
-      #- uses: netlify/actions/cli@master 
-      #  env:
-      #    NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #    NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      #  with:
-      #    args: deploy --dir=dist --prod
-      #    secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check:ci
+      - run: npm test
+      - run: npm run build

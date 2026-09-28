@@ -1,0 +1,39 @@
+@use '../settings/colors' as *;
+
+.bg {
+    padding: 0 5px;
+    color: $white;
+
+    &.bg--backend {
+        background-color: $blue; 
+    }
+
+    &.bg--frontend {
+        background-color: $green; 
+    }
+
+    &.bg--golang {
+        background-color: #6ad7e5;
+        color: #FFF;
+    }
+    &.bg--js {
+        background-color: #efd81d;
+        color: #000;
+    }
+    &.bg--python {
+        background-color: #3776ab;
+        color: #fff;
+    }
+    &.bg--ai {
+        background-color: #6c4b9b;
+        color: #fff;
+    }
+    &.bg--vue {
+        background-color: #3fb27f;
+        color: #32475b;
+    }
+    &.bg--react {
+        background-color: #20232a;
+        color: #61dafb;
+    }
+}

@@ -1,0 +1,126 @@
+@use '../settings/colors' as *;
+@use '../tools/mixins' as *;
+
+header.container {
+    padding-top: 41px;
+    margin-bottom: 109.7px;
+    height: 46px;
+
+    // Movil
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 50px;
+        height: 98px;
+    }
+
+    > nav.top_nav {
+        // Tablas, Desktop
+        @media only screen and (min-width: 576px) {
+            @include flex_row(space-between);
+        }
+
+        // Movil
+        @media only screen and (max-width: 575px) {
+            @include flex_column;
+            gap: 8px;
+        }
+
+        ul.menu {
+            @include flex_row;
+
+            .menu-label {
+                font-weight: inherit;
+            }
+
+            .menu-icon {
+                display: none;
+                width: 22px;
+                height: 22px;
+                fill: none;
+                stroke: currentColor;
+                stroke-width: 1.75;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            li {
+                margin-right: 40px;
+                
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                a {
+                    color: $black_4;
+                    font-weight: 600;
+
+                    &:hover, &.active {
+                        color: $black;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 991px) {
+                gap: 12px;
+
+                li {
+                    margin-right: 0;
+
+                    a {
+                        @include flex_row;
+                        width: 44px;
+                        height: 44px;
+                    }
+                }
+
+                .menu-label {
+                    display: none;
+                }
+
+                .menu-icon {
+                    display: block;
+                }
+            }
+        }
+
+        div.net-and-lang {
+            @include flex_row(flex-start);
+
+            ul.networks {
+                @include flex_row;
+
+                li {
+                    margin-right: 27px;
+
+                    @media only screen and (max-width: 359px) {
+                        margin-right: 16px;
+                    }
+
+                    a {
+                       .social-icon {
+                            width: 19.5px;
+                            height: 19.5px;
+                            transition: all 0.1s ease;
+                       }
+
+                       &:hover {
+                        .social-icon {
+                            transform: translateY(-2px);
+                        }
+                       }
+                    }
+
+                    &:last-of-type {
+                        margin-right: 28.65px;
+
+                        @media only screen and (max-width: 359px) {
+                            margin-right: 16px;
+                        }
+                    }
+                }
+                
+            }
+
+            
+        }
+    }
+}

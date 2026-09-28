@@ -1,0 +1,10 @@
+node_modules
+dist
+.ssr
+.git
+.codebase-memory
+.playwright-mcp
+.vscode
+coverage
+*.log
+.env*
